@@ -59,7 +59,8 @@ namespace Pinta
 		internal uint TimerHandle;
 
 		string[] authors = new string[] {
-			"Andrew Davis",
+            "Md. Rashidul Hasan Masum",
+            "Andrew Davis",
 			"Cameron White",
 			"Don McComb",
 			"Jonathan Bergknoff",
