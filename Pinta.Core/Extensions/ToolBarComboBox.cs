@@ -45,8 +45,8 @@ namespace Pinta.Core
 					foreach (string entry in contents)
 						Model.AppendValues (entry, null);
 
-				ComboBox = CreateComboBox ();
-				ComboBox.Model = Model;
+				ComboBox = CreateComboBox (Model);
+				//ComboBox.Model = Model;
 			}
 
 			ComboBox.AddEvents ((int)Gdk.EventMask.ButtonPressMask);
@@ -61,9 +61,17 @@ namespace Pinta.Core
 			Show ();
 		}
 
-		protected virtual ComboBox CreateComboBox ()
+        protected virtual ComboBox CreateComboBox()
+        {
+            var cbo = ComboBox.NewText();
+            return cbo;
+        }
+
+        protected virtual ComboBox CreateComboBox (TreeModel model)
 		{
-			return ComboBox.NewText ();
+			var cbo = ComboBox.NewText ();
+            cbo.Model = model;
+            return cbo;
 		}
 	}
 }
